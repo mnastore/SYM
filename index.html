@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SyM</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
 body {
     margin: 0;
@@ -44,6 +45,9 @@ body {
     padding: 5px 10px;
     display: none;
     margin-right: 10px;
+    min-width: 200px;   /* nunca más pequeño */
+    max-width: 400px;   /* opcional: no demasiado grande */
+    width: auto;        /* se ajusta al tamaño disponible */
 }
 
 .topbar .search-container input {
@@ -213,7 +217,7 @@ footer {
 @media screen and (min-width: 769px) {
 
   .topbar .search-container {
-    width: 1100px;
+    width: 300px;
   }
 
   .topbar .search-container input {
@@ -233,7 +237,7 @@ footer {
             <span>&#128269;</span>
             <input type="text" placeholder="Buscar Productos..." id="searchInput">
         </div>
-        <span class="search-icon" id="searchIcon">&#128269;</span>
+        <i class="fas fa-search search-icon" id="searchIcon"></i>
         <div class="hamburger" id="hamburger">
             <div></div>
             <div></div>
@@ -544,7 +548,7 @@ footer {
 /* Ajustes de barra superior para PC */
 @media screen and (min-width: 1024px) {
     .topbar img.logo {
-        height: 150px; /* logo más grande */
+        height: 100px; /* logo más grande */
     }
     .topbar .hamburger {
         width: 35px;  /* ancho de las 3 líneas */
@@ -643,14 +647,8 @@ const searchContainer = document.getElementById("searchContainer");
 const searchInput = document.getElementById("searchInput");
 
 searchIcon.addEventListener("click", () => {
-    if(searchContainer.style.display === "flex"){
-        searchContainer.style.display = "none";
-        searchInput.value = "";
-        filterProducts("");
-    } else {
-        searchContainer.style.display = "flex";
-        searchInput.focus();
-    }
+    searchContainer.style.display = "flex";
+    searchInput.focus();
 });
 
 searchInput.addEventListener("input", function(){
