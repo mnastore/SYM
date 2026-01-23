@@ -551,14 +551,22 @@ footer {
         height: 100px; /* logo más grande */
     }
     .topbar .hamburger {
-        width: 35px;  /* ancho de las 3 líneas */
-        height: 28px; /* alto del contenedor de líneas */
+        width: 28px;  /* ancho de las 3 líneas */
+        height: 22px; /* alto del contenedor de líneas */
     }
     .topbar .hamburger div {
-        height: 4px; /* grosor de cada línea */
+        height: 3px; /* grosor de cada línea */
+    }
+  @media screen and (max-width: 1023px) {
+    .topbar .hamburger div {
+        height: 2.5px; /* grosor más delgado */
+    }
+}
+    .topbar .search-icon {
+        font-size: 35px; /* tamaño de la lupa */
     }
     .topbar .search-icon {
-        font-size: 45px; /* tamaño de la lupa */
+        font-weight: 400; /* grosor normal */
     }
     .topbar .search-container input {
         width: 250px; /* barra de búsqueda más larga */
